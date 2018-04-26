@@ -8,29 +8,43 @@ app.controller('FoodController', ['$http', function ($http) {
     var self = this;
     self.food = 'I like food!';
 
-self.Food = [
-    {
-    "name": "Katie",
-    "deliciousness_rating": "10",
-    "is_hot": "not hot enough",
-}
-];
+    self.Food = [];
 
     self.newFood = {};
-
-    self.createFood = function(newFoodName, newDeliciousness_rating, newIs_hot){
-    self.newFood.name = newFoodName;
-    self.newFood.deliciousness_rating = newDeliciousness_rating;
-    self.newFood.is_hot = newIs_hot;
-    console.log(self.newFood);
-    self.Food.push(angular.copy(self.newFood));
+    getTheFood();
+    self.createFood = function (newFoodName, newDeliciousness_rating, newIs_hot) {
+        self.newFood.name = newFoodName;
+        self.newFood.deliciousness_rating = newDeliciousness_rating;
+        self.newFood.is_hot = newIs_hot;
+        console.log(self.newFood);
+        showTheFood();
     };
 
-    $http({
-        method: 'GET',
-        url: '/food'
-    })
-    .then(function(response) {
-        console.log(response.data);
-    });
-}]);
+    function getTheFood() {
+        $http({
+            method: 'GET',
+            url: '/food'
+        })
+            .then(function (response) {
+                self.Food = response.data;
+                console.log(response.data);
+            }).catch((error) => {
+                console.log('error it isnt working', error);
+                res.sendStatus(500);
+            });
+    }
+
+    function showTheFood() {
+        $http({
+            method: 'POST',
+            url: '/food',
+            data: self.newFood
+        })
+            .then(function (response) {
+                console.log(response);
+            }).catch((error) => {
+                console.log('errors again', );
+            });
+            getTheFood();
+        }
+    }])

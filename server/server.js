@@ -7,11 +7,11 @@ const foodRouter = require('./routes/food.route');
 const foodCollection = require('./modules/food.collection');
 
 app.use(express.static('server/public'));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
-app.get('/food', (req, res) => {
-    res.send([{name: 'pasta', deliciousness_rating: 9, is_hot: true}]);
-});
+// app.get('/food', (req, res) => {
+//     res.send(foodCollection);
+// });
 
 app.use('/food', foodRouter);
 
