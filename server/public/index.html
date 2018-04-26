@@ -21,7 +21,14 @@
 
           <button ng-click="vm.createFood(vm.newFood.name, vm.newFood.deliciousness_rating, vm.newFood.is_hot)">Submit</button>
     </div>
-
+    <h3>Food List</h3>
+    <ul class="list-group">
+    <p class="list-group-item" ng-repeat="food in vm.Food">
+    {{food.name}}
+    {{food.deliciousness_rating}}
+    {{food.is_hot}}
+    </p>
+    </ul>
     
 </body>
 </html>

@@ -12,8 +12,9 @@ self.Food = [
     {
     "name": "Katie",
     "deliciousness_rating": "10",
-    "is_hot": "not hot enough"
-}];
+    "is_hot": "not hot enough",
+}
+];
 
     self.newFood = {};
 
