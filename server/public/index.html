@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vendors/angular.min.js"></script>
+    <script src="scripts/client.js"></script>
+    <title>Food App</title>
+</head>
+<body ng-app="FoodApp">
+    <h1>Food App</h1>
+    {{vm.message}}
+    <div ng-controller="FoodController as vm"></div>
+    <input ng-model="vm.message"/>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "kochab-food-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": node server/server.js,
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katiemikul/kochab-food-app.git"
+  },
+  "author": "Katie Mikul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katiemikul/kochab-food-app/issues"
+  },
+  "homepage": "https://github.com/katiemikul/kochab-food-app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "save": "^2.3.2"
+  }
+}
