@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="vendors/angular.min.js"></script>
     <script src="scripts/client.js"></script>
-    <title>Food App</title>
+    <title>Angular Full Stack</title>
 </head>
-<body ng-app="FoodApp">
-    <h1>Food App</h1>
-    {{vm.message}}
-    <div ng-controller="FoodController as vm"></div>
-    <input ng-model="vm.message"/>
+<body ng-app="FoodApp" ng-controller="FoodController as vm">
+    <h1>Angular Full Stack Food App</h1>
+    {{vm.food}}
+    <input ng-model="vm.food"/>
     
 </body>
 </html>

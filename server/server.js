@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const PORT = 5000;
+const PORT = process.env.port || 5000;
 
 const foodRouter = require('./routes/food.route');
 const foodCollection = require('./modules/food.collection');
@@ -9,11 +9,11 @@ const foodCollection = require('./modules/food.collection');
 app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.post('/food', (req, res) => {
-    res.sendStatus(200);
-})
+app.get('/food', (req, res) => {
+    res.send([{name: 'pasta', deliciousness_rating: 9, is_hot: true}]);
+});
 
-// app.use('/food', foodRouter);
+app.use('/food', foodRouter);
 
 app.listen(PORT, () => {
     console.log(`up and running on port: ${PORT}`);
