@@ -11,7 +11,17 @@
 <body ng-app="FoodApp" ng-controller="FoodController as vm">
     <h1>Angular Full Stack Food App</h1>
     {{vm.food}}
-    <input ng-model="vm.food"/>
+    <div>
+        <label for="">Food</label>
+          <input type="text" ng-model="vm.newFood.name" placeholder="Food"/>
+          <label for="">Deliciousness Rating</label>
+          <input type="text" ng-model="vm.newFood.deliciousness_rating" placeholder="Deliciousness Rating"/>
+          <label for="">Is it Hot?</label>
+          <input type="text" ng-model="vm.newFood.is_hot" placeholder="Is it Hot"/>
+
+          <button ng-click="vm.createFood(vm.newFood.name, vm.newFood.deliciousness_rating, vm.newFood.is_hot)">Submit</button>
+    </div>
+
     
 </body>
 </html>
